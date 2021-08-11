@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel = "icon" href = "../static/SB.png" type = "image/x-icon">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+        body {
+            background-image: url('../static/bg.jpg');
+
+            /* background-image:linear-gradient(to right, rgba(0,0,0,1) , rgba(255,0,0,0)); */
+
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+
+            font-family: "Ubuntu";
+
+            margin: 0;
+            padding: 0;
+
+            background-repeat: no-repeat;
+
+            
+            
+
+        }
+
+
+
+        .login-page,
+        .register-page {
+            width: 360px;
+
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+        /* .halfColor{
+            width: 70%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left:0;
+            top: 0;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0))
+            
+
+        } */
+
+        .form {
+            position: relative;
+            z-index: 1;
+            background: rgb(255, 255, 255, 0.4);
+
+            max-width: 70%;
+            margin: 0 auto;
+            padding: 25px 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+                0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .form input {
+            font-family: "Roboto", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form .btn {
+            font-family: "Ubuntu";
+            text-transform: uppercase;
+            outline: 0;
+            background: rgb(0, 0, 0, 0.4);
+            width: 100%;
+            border: 0;
+            /* border-radius: 5px; */
+            padding: 15px;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 16px;
+            -webkit-transition: all 0.5 ease;
+            transition: all 0.5 ease;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .form #back {
+            background: rgb(255, 255, 255, 0.3);
+            padding: 5px 10px;
+            position: relative;
+            left: -50%;
+            font-size: 20px;
+        }
+
+        .form .btn:hover,
+        .form .btn:active,
+        .form .btn:focus {
+            background: rgb(0, 0, 0, 0.6);
+            transition: all 0.5 ease;
+        }
+
+        .form .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+
+        .form .message a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .container:before,
+        .container:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container .info {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .container .info h1 {
+            margin: 0 0 15px;
+            padding: 0;
+            font-size: 36px;
+            font-weight: 300;
+            color: #1a1a1a;
+        }
+
+        .container .info span {
+            color: #4d4d4d;
+            font-size: 12px;
+        }
+
+        .container .info span a {
+            color: #ffffff;
+            text-decoration: none;
+
+        }
+
+        h2 {
+            margin-top: 0;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+            font-size: 30px;
+        }
+
+        .container .info span .fa {
+            color: #ef3b3a;
+        }
+
+
+
+        a {
+            color: rgb(59, 59, 59);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: rgb(0, 0, 0);
+        }
+
+        .form span {
+            padding: 5px auto;
+        }
+
+        .messages {
+            text-decoration: none;
+            list-style: none;
+            background: rgb(255, 255, 255, 0.7);
+            display: inline-block;
+            width: 20%;
+            padding: 5px 15px;
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="halfColor"> </div>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+
+
+    {% block content %}
+
+    {% endblock content %}
+
+    {% block script %}
+
+    {% endblock script %}
+
+</body>
+
+</html>

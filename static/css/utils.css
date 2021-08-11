@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kaushan+Script&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Great+Vibes&family=Kaushan+Script&family=Ubuntu&display=swap');
+
+:root{
+    --font-1:  'Ubuntu', sans-serif;
+    --font-2: 'Baloo Bhai 2', cursive;
+    --font-3:  'Great Vibes', cursive;
+    --font-4:  'Kaushan Script', cursive;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.font-1{
+    font-family: var(--font-1) ;
+}
+.font-2{
+    font-family: var(--font-2) ;
+}
+.font-3{
+    font-family: var(--font-3) ;
+}
+.font-4{
+    font-family: var(--font-4) ;
+}
+
+.m-auto{
+    margin: auto;
+}
+
+.max-width-1{
+    width: 80vw;
+}
+
+.zoom:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
