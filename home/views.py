@@ -18,7 +18,7 @@ def loginUser(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request,user)
-            messages.info(request,username)
+
             return redirect('/')
         else:
             if ((request.POST.get('username')=="") or (request.POST.get('password')=="")):
