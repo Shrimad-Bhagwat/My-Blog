@@ -149,7 +149,11 @@
       color: white;
 
     }
-
+    span{
+      color: white;
+      font-weight: 600;
+      padding: 0 10px;
+    }
     a img:hover {
       transform: scale(1.05);
       transition: .5s ease-in-out;
@@ -198,13 +202,7 @@
     </div> -->
 
   <div class="topRight">
-    {% if messages %}
-    <ul class="messages">
-      {% for message in messages %}
-      <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    <span>{{ user.username }}</span>
 
     <span><a href="/logout">Logout</a></span>
 
