@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+# from django.shortcuts import render_to_response
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import UserCreationForm
@@ -18,8 +19,13 @@ def loginUser(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request,user)
-
-            return redirect('/')
+            
+            data = Post.objects.all()
+            po={
+                "post_no" : data
+            }
+            return redirect('/',po)
+            # return render_to_response("/",po)
         else:
             if ((request.POST.get('username')=="") or (request.POST.get('password')=="")):
                 messages.info(request,"Fill Everything!")
@@ -51,8 +57,8 @@ def coding(request):
 def nature(request):
     if request.user.is_anonymous:
         return redirect("/login")
-        
-    return render(request,'nature.html')
+    posts = Post.objects.all()
+    return render(request,'nature.html',{'posts':posts})
 def travel(request):
     if request.user.is_anonymous:
         return redirect("/login")
@@ -81,3 +87,5 @@ def create(request):
         post = Post(heading=heading,content=content)
         post.save()
     return render(request, 'create.html')
+
+
