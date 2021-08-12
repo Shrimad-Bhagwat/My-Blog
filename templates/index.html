@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -255,10 +256,10 @@
           </a>
           <a href="/nature">
             <div class="post flex">
-              <img src="https://source.unsplash.com/1600x900/?nature" alt="Post" class="postimg">
+              <img src="https://source.unsplash.com/1600x900/?" alt="Post" class="postimg">
               <div class="title ">
-                <h2>Nature</h2>
-                <h5>Save Nature, Save Us , Dec 7, 2017</h5>
+                <h2>Random</h2>
+                <h5>Dec 7, 2017</h5>
               </div>
               <div class="go-corner" href="#">
                 <div class="go-arrow">
@@ -306,7 +307,7 @@
           {% csrf_token %}
           <h3 >Feedback</h3>
           <label for="fname">First Name</label>
-          <input type="text" id="name" name="Uname" placeholder="Your name..">
+          <input type="text" id="Uname" name="Uname" placeholder="Your name..">
           <label for="subject">Feedback</label>
           <textarea id="content" name="content" placeholder="Write something.." style="height:200px"></textarea>
 

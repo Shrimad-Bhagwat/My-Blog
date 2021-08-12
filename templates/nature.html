@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,43 +19,20 @@
     <div class="back">
         <a href="/"><img src="../static/img/vectors/previous.png" alt="back" style="width: 40px; margin: 20px;" class="zoom"></a>
     </div>
+
+    {% for post in posts %}
     <div class="card max-width-1  flex font-1" >
-        <img src="https://source.unsplash.com/1600x900/?scenery" alt="coding" class="postimg">
+        <img src=" {{post.img.url}} " alt="coding" class="postimg">
         <div class="title ">
-            <h2>Nature <h2>
-            <h5>Dec 7, 2017</h5>
+            <h2> {{post.heading}} <h2>
+            
         </div>
         <div class=" font-1">
-
-            <p>&nbsp; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, quidem dolorem voluptatem officiis illo cupiditate voluptatum nisi error saepe nobis et ad consequatur ducimus aspernatur eveniet fugiat id, iste laudantium voluptatibus harum vitae. Nihil ducimus, itaque cum beatae delectus modi facilis nemo deleniti fugit minus inventore error consequatur eius porro rerum totam vel sit? Pariatur dolorem fugiat sequi assumenda aliquid!</p>
-            <p>&nbsp; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, quidem dolorem voluptatem officiis illo cupiditate voluptatum nisi error saepe nobis et ad consequatur ducimus aspernatur eveniet fugiat id, iste laudantium voluptatibus harum vitae. Nihil ducimus, itaque cum beatae delectus modi facilis nemo deleniti fugit minus inventore error consequatur eius porro rerum totam vel sit? Pariatur dolorem fugiat sequi assumenda aliquid!</p>
-        </div>
+            <p style="font-size:18px;"> &nbsp; &nbsp; {{post.content}} </p>
+         </div>
     </div>
-    <div class="card max-width-1  flex font-1" >
-        <img src="https://source.unsplash.com/1600x900/?nature" alt="coding" class="postimg">
-        <div class="title ">
-            <h2>Nature <h2>
-            <h5>Dec 7, 2017</h5>
-        </div>
-        <div class=" font-1">
-
-            <p>&nbsp; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, quidem dolorem voluptatem officiis illo cupiditate voluptatum nisi error saepe nobis et ad consequatur ducimus aspernatur eveniet fugiat id, iste laudantium voluptatibus harum vitae. Nihil ducimus, itaque cum beatae delectus modi facilis nemo deleniti fugit minus inventore error consequatur eius porro rerum totam vel sit? Pariatur dolorem fugiat sequi assumenda aliquid!</p>
-            <p>&nbsp; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, quidem dolorem voluptatem officiis illo cupiditate voluptatum nisi error saepe nobis et ad consequatur ducimus aspernatur eveniet fugiat id, iste laudantium voluptatibus harum vitae. Nihil ducimus, itaque cum beatae delectus modi facilis nemo deleniti fugit minus inventore error consequatur eius porro rerum totam vel sit? Pariatur dolorem fugiat sequi assumenda aliquid!</p>
-        </div>
-    </div>
-    <div class="card max-width-1  flex font-1" >
-        <img src="https://source.unsplash.com/1600x900/?forest" alt="coding" class="postimg">
-        <div class="title ">
-            <h2>Nature <h2>
-            <h5>Dec 7, 2017</h5>
-        </div>
-        <div class=" font-1">
-
-            <p>&nbsp; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, quidem dolorem voluptatem officiis illo cupiditate voluptatum nisi error saepe nobis et ad consequatur ducimus aspernatur eveniet fugiat id, iste laudantium voluptatibus harum vitae. Nihil ducimus, itaque cum beatae delectus modi facilis nemo deleniti fugit minus inventore error consequatur eius porro rerum totam vel sit? Pariatur dolorem fugiat sequi assumenda aliquid!</p>
-            <p>&nbsp; Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, quidem dolorem voluptatem officiis illo cupiditate voluptatum nisi error saepe nobis et ad consequatur ducimus aspernatur eveniet fugiat id, iste laudantium voluptatibus harum vitae. Nihil ducimus, itaque cum beatae delectus modi facilis nemo deleniti fugit minus inventore error consequatur eius porro rerum totam vel sit? Pariatur dolorem fugiat sequi assumenda aliquid!</p>
-        </div>
-    </div>
-
+    {% endfor %}
+       
 
 
     <div class="footer ">
