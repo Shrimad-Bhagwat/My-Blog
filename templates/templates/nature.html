@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Nature</title>
+    <link rel = "icon" href = "../static/SB.png" type = "image/x-icon">
+  <!-- Custom Css links -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/utils.css">
+</head>
+<body>
+    <div class="header font-4">
+        <h2> Blog</h2>
+ </div>
+        
+    <div class="back">
+        <a href="/"><img src="../static/img/vectors/previous.png" alt="back" style="width: 40px; margin: 20px;" class="zoom"></a>
+    </div>
+
+    {% for post in posts %}
+    <div class="card max-width-1  flex font-1" >
+        <img src= {{post.img.url}}  alt="coding" class="postimg">
+        <div class="title ">
+            <h2> {{post.heading}} <h2>
+            
+        </div>
+        <div class=" font-1">
+            <p style="font-size:18px;"> &nbsp; &nbsp; {{post.content}} </p>
+         </div>
+    </div>
+    {% endfor %}
+       
+
+
+    <div class="footer ">
+        <h2>Go to top</h2>
+        <a href="#"><img src="../static/img/vectors/up-arrow.png" alt="Up" style="width: 40px;" class="zoom"></a>
+    </div>
+   
+</body>
+</html>

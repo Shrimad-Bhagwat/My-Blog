@@ -1,0 +1,359 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog </title>
+  <link rel="icon" href="../static/SB.png" type="image/x-icon">
+  <!-- Custom Css links -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/utils.css">
+  <link rel="stylesheet" href="../static/css/loader.css">
+
+  <style>
+    body,
+    html {
+      /* height: 100vh; */
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-1);
+    }
+
+    /* {% comment %} p {
+      font-size: 28px;
+    } {% endcomment %} */
+
+
+
+    /* Position text in the top-left corner */
+    .topleft {
+      position: absolute;
+      top: 0;
+      left: 16px;
+      z-index: 1;
+    }
+
+    .topleft p {
+      margin: 14px 0px;
+      color: white;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+
+    /* Position text in the bottom-left corner */
+    .topRight {
+      position: absolute;
+      top: 3%;
+      right: 1%;
+      font-size: 25px;
+      z-index: 1;
+      width: auto;
+    }
+
+    .topRight span a {
+      text-decoration: none;
+      color: white;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .topRight span a:hover {
+      color: rgb(112, 112, 112);
+
+    }
+
+    /* Position text in the middle */
+    .middle {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    /* Style the <hr> element */
+    hr {
+      margin: auto;
+      width: 45%;
+    }
+
+    .messages {
+      text-decoration: none;
+      list-style: none;
+      display: inline-block;
+      color: white;
+      font-weight: 700;
+      font-size: 28px;
+      margin: 0 10px;
+      text-align: center;
+
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .flex-container {
+      /* padding-top: 10%; */
+
+      display: flex;
+      flex-direction: row;
+      font-size: 30px;
+      text-align: center;
+      justify-content: space-around;
+    }
+
+
+
+    .flex-item {
+
+      padding: 10px;
+      flex: 50%;
+      margin: 2% 5%;
+
+
+      /* width: 160px; */
+      min-height: 180px;
+      max-width: 35%;
+
+    }
+
+    .flex-item img {
+      width: 100%;
+
+    }
+
+    .left {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .right {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      margin: 0 auto;
+      /* padding: 35px 0px 0px 0px; */
+      top: 0;
+      z-index: -5;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+
+    }
+    span{
+      color: white;
+      font-weight: 600;
+      padding: 0 10px;
+    }
+    a img:hover {
+      transform: scale(1.05);
+      transition: .5s ease-in-out;
+    }
+
+    .board {
+      background-color: grey;
+      width: 100%;
+      height: 90%;
+      border: 1px solid black;
+
+    }
+
+    #content {
+      /* margin: 10px; */
+      /* padding: 20px; */
+      width: 100%;
+      height: 90%;
+    }
+
+    
+.btn{
+  width: 30%;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px auto;
+  color: black;
+}
+.btn h3{
+  margin: auto;
+  padding: 20px;
+}
+.btn:hover{
+  background-color: black;
+  color: white;
+  transition: all .2s ease-in-out;
+}
+
+
+    /* Responsive layout - makes a one column-layout instead of two-column layout */
+    @media (max-width: 600px) {
+      .flex-container {
+        flex-direction: column;
+      }
+
+      .flex-item {
+        margin-top: 15%;
+        max-width: 500px;
+      }
+      .btn {
+        width: 60%;
+      }
+
+    }
+  </style>
+</head>
+
+<body style="height: 10px;">
+
+  <div class="topleft">
+    <p>SB</p>
+  </div>
+  <!-- <div class="middle">
+      <h1>COMING SOON</h1>
+      <hr>
+      
+    </div> -->
+
+  <div class="topRight">
+    <span>{{ user.username }}</span>
+
+    <span><a href="/logout">Logout</a></span>
+
+  </div>
+  <div class="container">
+
+
+
+    <div class="header font-4">
+      <h2> Blog
+      </h2>
+    </div>
+    <div class="max-width-1 m-auto">
+
+
+      <div class="row font-1">
+        <div class="leftcolumn">
+          <div class="card" style=" background-color: var(--color1); color: white;">
+            <h1>
+              Categories
+            </h1>
+          </div>
+          <a href="/coding">
+            <div class="post flex">
+              <img src="https://source.unsplash.com/1600x900/?coding" alt="Post" class="postimg">
+              <div class="title ">
+                <h2>Coding <h2>
+                    <h5>To the Coding Section, Dec 7, 2017</h5>
+              </div>
+              <div class="go-corner" href="#">
+                <div class="go-arrow">
+                  →
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/travel">
+            <div class="post flex">
+              <img src="https://source.unsplash.com/1600x900/?travel" alt="Post" class="postimg">
+              <div class="title ">
+                <h2>Travel</h2>
+                <h5>Travel Blog, Dec 7, 2017</h5>
+              </div>
+              <div class="go-corner" href="#">
+                <div class="go-arrow">
+                  →
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/nature">
+            <div class="post flex">
+              <img src="https://source.unsplash.com/1600x900/?" alt="Post" class="postimg">
+              <div class="title ">
+                <h2>Random</h2>
+                <h5>Dec 7, 2017</h5>
+              </div>
+              <div class="go-corner" href="#">
+                <div class="go-arrow">
+                  →
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/accounts/create">
+          <div class="btn m-auto">
+            <h3>Create a Post</h3>
+          </div>
+          </a>
+          
+
+
+        </div>
+        <div class="rightcolumn">
+          <div class="card ">
+            <h2 style="color:black;">About Me</h2>
+            <img src="../static/img/vectors/profile.jpg" alt="shri" class="fakeimg profile-img">
+            <p>Hello World! <br>I'm Shrimad Bhagwat.<br> A self taught Programmer and Web Developer and this is my Blog.
+              Hope you like it.<br> :D </p>
+          </div>
+          <div class="card">
+            <h3>Popular Post</h3>
+            <a href="#"><img src="https://source.unsplash.com/1600x900/?mountains" alt="Post" class="fakeimg zoom"></a>
+            <a href="#"><img src="https://source.unsplash.com/1600x900/?valleys" alt="Post" class="fakeimg zoom"></a>
+            <a href="#"><img src="https://source.unsplash.com/1600x900/?sports" alt="Post" class="fakeimg zoom"></a>
+          </div>
+          <div class="card m-auto follow-me">
+            <h3>Follow Me</h3>
+            <div class="social">
+
+              <a href="https://www.instagram.com/" target="_blank"><img src="../static/img/vectors/instagram.png"
+                  alt="ig"></a>
+              <a href="https://www.telegram.com" target="_blank"><img src="../static/img/vectors/telegram.png"
+                  alt="tele"></a>
+              <a href="https://www.twitter.com" target="_blank"><img src="../static/img/vectors/twitter.png"
+                  alt="twit"></a>
+              <a href="https://www.youtube.com" target="_blank"><img src="../static/img/vectors/youtube.png"
+                  alt="yt"></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <form action="/feedback" method="POST">
+          {% csrf_token %}
+          <h3 >Feedback</h3>
+          <label for="fname">First Name</label>
+          <input type="text" id="Uname" name="Uname" placeholder="Your name..">
+          <label for="subject">Feedback</label>
+          <textarea id="content" name="content" placeholder="Write something.." style="height:200px"></textarea>
+
+          <input type="submit" value="Submit">
+
+        </form>
+
+      </div>
+    </div>
+    <div class="footer ">
+      <h2>Go to top</h2>
+      <a href="#"><img src="../static/img/vectors/up-arrow.png" alt="Up" style="width: 40px;" class="zoom"></a>
+      <h4 style="color:white; font-weight:600;">Created by Shrimad Bhagwat | © 2021 All rights reserved.</h4>
+    </div>
+
+  </div>
+
+
+  </div>
+</body>
+
+</html>

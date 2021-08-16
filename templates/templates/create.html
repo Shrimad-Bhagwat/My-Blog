@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Post</title>
+    <!-- Custom Css links -->
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/utils.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 80vw;
+        height: 80vh;
+        margin: auto auto;
+      }
+      input {
+        margin: 15px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <form action="/accounts/create" method="post">
+        {% csrf_token %}
+        <h1>Create Post</h1>
+        <label for="Heading">Heading</label>
+        <input
+          type="text"
+          id="heading"
+          name="heading"
+          placeholder="Your heading.."
+        />
+        <label for="content">Content</label>
+        <textarea
+          id="content"
+          name="content"
+          placeholder="Write something.."
+          style="height: 200px"
+        ></textarea>
+        <label for="img">Select image:</label>
+        <input type="file" id="img" name="img" accept="image/*" /><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

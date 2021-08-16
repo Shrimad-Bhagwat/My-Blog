@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login | SB
+{% endblock title %}
+
+{% block content %}
+<div class="login-page">
+  
+    <div class="form">
+      <h2>Login</h2>
+      <form class="login-form" action="/login" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
+        <button class="btn">Login</button>
+
+        <span>Not a member? <a href="accounts/register ">Register</a></span>
+        
+      </form>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block script %}
+
+{% endblock script %}
