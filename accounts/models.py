@@ -10,6 +10,6 @@ class Feedback(models.Model):
 class Post(models.Model):
     heading = models.CharField(max_length=50)
     content = models.TextField()
-    img = models.ImageField(upload_to='postImages')
+    img = models.ImageField(upload_to='pics')
     def __str__(self):
         return "Post : " + self.heading
