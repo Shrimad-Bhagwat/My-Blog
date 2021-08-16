@@ -10,5 +10,5 @@ urlpatterns = [
     path('nature', views.nature, name="nature"),
     path('travel', views.travel, name="travel"),
     path('feedback', views.feedback, name="feedback"),
-    path('create', views.create, name="create"),
+    
 ]

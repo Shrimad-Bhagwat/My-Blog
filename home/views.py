@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from accounts.models import Feedback,Post
+
+
 # Create your views here.
 def index(request):
     if request.user.is_anonymous:
@@ -77,15 +79,39 @@ def feedback(request):
         
     return render(request, 'index.html')
 
-def create(request):
-    if request.user.is_anonymous:
-        return redirect("/login")
-    if request.method=="POST":
-        heading = request.POST['heading']
-        content = request.POST['content']
-        print(heading,content)
-        post = Post(heading=heading,content=content)
-        post.save()
-    return render(request, 'create.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # if request.user.is_anonymous:
+    #     return redirect("/login")
+    # if request.method=="POST":
+    #     heading = request.POST['heading']
+    #     content = request.POST['content']
+    #     img = request.POST['img']
+    #     print(heading,content,img)
+    #     post = Post(heading=heading,content=content,img='/pics/'+img)
+    #     post.save()
+    #     with open(post.img, 'wb+') as f:
+    #         for chunk in img.chunks():
+    #             f.write(chunk)
+    #     return render(request,'index.html')   
+    # return render(request, 'create.html')
 
 
